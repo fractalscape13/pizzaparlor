@@ -33,7 +33,11 @@ $(document).ready(function() {
     $("#pizzaorder").hide();
     $("#saladorder").hide();
     $("#detailscreen").fadeIn();
-
+  });
+  $("#saladorder").on("click", "button", function() {
+    $("#pizzaorder").hide();
+    $("#saladorder").hide();
+    $("#saladdetailscreen").fadeIn();
   });
   
   

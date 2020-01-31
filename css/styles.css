@@ -30,6 +30,7 @@ button {
   border: 3px solid black;
   border-radius: 10%;
   background-image: radial-gradient(silver, red);
+  margin: 25px;
 }
 
 button:hover {
