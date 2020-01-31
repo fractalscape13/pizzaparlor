@@ -1,4 +1,4 @@
-//business logic
+// //business logic
 function Pizza() {
   this.size = size;
   this.toppings = 0;
@@ -9,7 +9,7 @@ Pizza.prototype.addTopping = function() {
 }
 
 Pizza.prototype.addSize = function() {
-  this.size = //input of size selection
+  this.size = size;
 }
 
 function Salad() {
@@ -22,13 +22,26 @@ Salad.prototype.addAddition = function() {
 }
 
 Pizza.prototype.addSize = function() {
-  this.size = //input of size selection
+  this.size = size;
 }
 
 
 //user interface
+var currentOrder = "";
 $(document).ready(function() {
-  $("form").submit(function() {
+  $("#pizzaorder").on("click", "button", function() {
+    $("#pizzaorder").hide();
+    $("#saladorder").hide();
+    $("#detailscreen").fadeIn();
 
   });
+  
+  
+  
+  // $("#pizzaform").submit(function() {
+  //   event.preventDefault();
+  // });
+  // $("#saladform").submit(function() {
+  //   event.preventDefault();
+  // });
 });

@@ -10,7 +10,7 @@ body {
 }
 
 #pricescreen, #detailscreen, #saladdetailscreen {
-  /* display: none; */
+  display: none;
 }
 
 h1 {
