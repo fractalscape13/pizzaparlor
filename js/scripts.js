@@ -8,7 +8,12 @@ function Pizza() {
 }
 
 Pizza.prototype.addToppings = function(input) {
-  this.toppings += input; // make prototype.addToppings a loop to add up the value of the totalAddons array of toppings
+  var updateCost = 0;
+  for (var i=0; i < input.length; i++){
+    updateCost += parseInt(input[i]);
+  }
+  console.log(updateCost);
+  this.toppings += updateCost;
 }
 
 Pizza.prototype.addSize = function(input) {
@@ -76,9 +81,8 @@ $(document).ready(function() {
     if (currentOrder.size > 9) {
       $.each($("input[name='topping']:checked"), function(){
         totalAddons.push($(this).val());
-    });
-      console.log(totalAddons);
-      // currentOrder.addToppings(totalAddons);
+      });
+      currentOrder.addToppings(totalAddons);
       deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
@@ -86,10 +90,9 @@ $(document).ready(function() {
       $("#totalorder").append(currentOrder.type)
       $("#pizzaoptions").hide();
       $("#pricescreen").fadeIn();
-      } else {
+    } else {
         $(".please").fadeIn();
-      }
-    console.log(currentOrder);
+    }
   });
 
 
