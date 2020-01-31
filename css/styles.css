@@ -9,7 +9,7 @@ body {
   font-family: courier;
 }
 
-#pricescreen, #pizzaoptions, #saladoptions {
+#pricescreen, #pizzaoptions, #saladoptions, #address, #ontheway {
   display: none;
 }
 
@@ -52,6 +52,16 @@ button:hover {
   display: none;
   color: red;
   font-style: italic;
+}
+
+#address input {
+  background-color: black;
+  border: 3px solid black;
+  border-radius: 20px;
+  text-align: center;
+  color: ivory;
+  width: 35%;
+  margin-bottom: 30px;
 }
 
 select {

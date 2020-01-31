@@ -127,6 +127,11 @@ $(document).ready(function() {
 
   //click function for price screen
   $("#pricescreen").on("click", "#buybtn", function() {
-    alert("Your food is being prepared!")
+    if (currentOrder.deliveryfee > 0) {
+      $("#address").fadeIn();
+      currentOrder.deliveryfee = 0;
+    } else {
+      $("#ontheway").fadeIn();
+    }
   });
 });
