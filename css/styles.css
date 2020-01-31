@@ -43,6 +43,11 @@ button:hover {
   opacity: .6;
 }
 
+#buybtn {
+  background-image: radial-gradient(rgb(8, 68, 8), rgb(66, 104, 68));
+  color: silver;
+}
+
 .please {
   display: none;
   color: red;
