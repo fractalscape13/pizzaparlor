@@ -72,11 +72,13 @@ $(document).ready(function() {
     currentOrder = new Pizza();
     currentSize = parseInt($("#pizzasize").val());
     currentOrder.addSize(currentSize);
-    totalAddons =  parseInt($().val());
-    currentOrder.addToppings(totalAddons);
-    deliveryFee = parseInt($("#deliveryfee").val());
+    // totalAddons =  parseInt($().val());
+    // currentOrder.addToppings(totalAddons);
+    deliveryFee = parseInt($("#deliveryfee").val()); //not working as expected
     currentOrder.addDeliveryfee(deliveryFee);
+    currentOrder.totalCost();
     console.log(currentOrder);
+    $("#totalcost").text(currentOrder.totalcost);
     $("#pizzaoptions").hide();
     $("#pricescreen").fadeIn();
 
