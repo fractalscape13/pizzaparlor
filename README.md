@@ -21,11 +21,11 @@ _Simple, doesn't require anything additional_
 ## Specifications
 
 
-* __
-* __
-* __
-* __
-* __
+* _Let user click to start order and choose which item_
+* _Let user choose options and toppings_
+* _Let user change choices before placing order_
+* _Let user submit order and see final cost_
+* _Let user add item to cart for purchase_
 
 ## Known Bugs
 
