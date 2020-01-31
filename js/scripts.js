@@ -2,33 +2,44 @@
 function Pizza() {
   this.size = 0;
   this.toppings = 0;
+  this.deliveryfee = 0;
 }
 
-Pizza.prototype.addTopping = function() {
-  this.toppings++;
+Pizza.prototype.addTopping = function(input) {
+  this.toppings += input;
 }
 
 Pizza.prototype.addSize = function(input) {
   this.size += input;
+}
+
+Pizza.prototype.addDeliveryfee = function(input) {
+  this.deliveryfee += input;
 }
 
 function Salad() {
   this.size = 0;
   this.additions = 0;
+  this.deliveryfee = 0;
 }
 
-Salad.prototype.addAddition = function() {
-  this.additions++;
+Salad.prototype.addAddition = function(input) {
+  this.additions += input;
 }
 
-Pizza.prototype.addSize = function(input) {
+Salad.prototype.addSize = function(input) {
   this.size += input;
+}
+
+Salad.prototype.addDeliveryfee = function(input) {
+  this.deliveryfee += input;
 }
 
 
 //user interface
 var currentOrder = "";
 var currentSize = 0;
+var totalAddons = 0;
 $(document).ready(function() {
   //click function for start screen (salad or pizza)
   $("#pizzaorder").on("click", "button", function() {
@@ -50,7 +61,10 @@ $(document).ready(function() {
     currentOrder = new Pizza();
     currentSize = parseInt($("#pizzasize").val());
     currentOrder.addSize(currentSize);
-    // currentOrder.addTopping();
+    currentToppings =
+    totalAddons =  $()
+    currentOrder.addTopping(totalAddons);
+    console.log(currentOrder);
     $("#pizzaoptions").hide();
     $("#pricescreen").fadeIn();
 
