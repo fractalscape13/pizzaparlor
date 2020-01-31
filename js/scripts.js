@@ -74,13 +74,11 @@ $(document).ready(function() {
     currentOrder = new Pizza();
     currentSize = parseInt($("#pizzasize").val());
     currentOrder.addSize(currentSize);
-    // totalAddons =  parseInt($().val());
-    // currentOrder.addToppings(totalAddons);
-    deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
-    currentOrder.addDeliveryfee(deliveryFee);
-    currentOrder.totalCost();
-    console.log(currentOrder);
     if (currentOrder.size > 9) {
+      currentOrder.addToppings(totalAddons);
+      deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
+      currentOrder.addDeliveryfee(deliveryFee);
+      currentOrder.totalCost();
       $("#totalcost").append(currentOrder.totalcost);
       $("#totalorder").append(currentOrder.type)
       $("#pizzaoptions").hide();
@@ -88,6 +86,9 @@ $(document).ready(function() {
       } else {
         $(".please").fadeIn();
       }
+    
+    // totalAddons =  parseInt($().val());
+    console.log(currentOrder);
   });
 
 
@@ -97,18 +98,17 @@ $(document).ready(function() {
     currentOrder = new Salad();
     currentSize = parseInt($("#saladsize").val());
     currentOrder.addSize(currentSize);
-    deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
-    currentOrder.addDeliveryfee(deliveryFee);
-    currentOrder.totalCost();
-    console.log(currentOrder);
     if (currentOrder.size > 9) {
+      deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
+      currentOrder.addDeliveryfee(deliveryFee);
+      currentOrder.totalCost();
       $("#totalcost").append(currentOrder.totalcost);
       $("#totalorder").append(currentOrder.type)
       $("#saladoptions").hide();
       $("#pricescreen").fadeIn();
       } else {
         $(".please").fadeIn();
-      }
+      }   
   });
 
 
