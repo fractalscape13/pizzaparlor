@@ -13,12 +13,12 @@
 <body class="container">
   <h1>BITS & PIZZAS</h1>
   <div id="pizzaorder" class="box">
-    <p>Pizza</p>
+    <h3>~ Pizza ~</h3>
     <button type="button" id="pizzabtn">Order Now</button>
   </div>
   
   <div id="saladorder" class="box">
-    <p>Salads</p>
+    <h3>~ Salads ~</h3>
     <button type="button" id="saladbtn">Order Now</button>
   </div>
  
@@ -95,6 +95,19 @@
             <option value="large" id="">Dinner Salad (large)</option>
             <option value="small" id="">Side Salad (small)</option>
           </select>
+          <div class="radio">
+            <p>Delivery or pickup?</p>
+            <label>
+              <input type="radio" name="deliverytype" value="5">
+              Delivery
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="deliverytype" value="0">
+              In-store pickup
+            </label>
+          </div>
         </div>
         <div class="col-md-6">
           <p>Choose your add-ons: </p>

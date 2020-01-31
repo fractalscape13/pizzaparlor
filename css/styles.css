@@ -29,8 +29,9 @@ h1 {
 button {
   border: 3px solid black;
   border-radius: 15px;
-  background-image: radial-gradient(silver, red);
+  background-image: radial-gradient(ivory, red);
   margin: 25px;
+  font-size: 140%;
 }
 
 button:hover {
@@ -40,4 +41,54 @@ button:hover {
 
 select {
   margin-bottom: 95px;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: rgb(202, 199, 199);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: rgb(238, 64, 151);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid black;
+}
+
+input[type='checkbox']:after {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  background-color: rgb(182, 178, 178);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='checkbox']:checked:after {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  background-color: rgb(238, 64, 151);
+  content: '^';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid black;
 }
