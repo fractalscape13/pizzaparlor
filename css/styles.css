@@ -9,6 +9,10 @@ body {
   font-family: monospace;
 }
 
+#pricescreen, #detailscreen, #saladdetailscreen {
+  /* display: none; */
+}
+
 h1 {
   color: goldenrod;
   margin-top: 30px;
@@ -26,4 +30,8 @@ button {
   border: 3px solid black;
   border-radius: 10%;
   background-image: radial-gradient(silver, red);
+}
+
+button:hover {
+  cursor: pointer;
 }
