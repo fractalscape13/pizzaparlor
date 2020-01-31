@@ -78,10 +78,13 @@ $(document).ready(function() {
     currentOrder.addDeliveryfee(deliveryFee);
     currentOrder.totalCost();
     console.log(currentOrder);
-    $("#totalcost").text(currentOrder.totalcost);
-    $("#pizzaoptions").hide();
-    $("#pricescreen").fadeIn();
-
+    if (currentOrder.size > 9) {
+      $("#totalcost").append(currentOrder.totalcost);
+      $("#pizzaoptions").hide();
+      $("#pricescreen").fadeIn();
+      } else {
+        $("#please").fadeIn();
+      }
   });
 
 
@@ -90,6 +93,10 @@ $(document).ready(function() {
     event.preventDefault();
     currentOrder = new Salad();
 
+    deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
+    currentOrder.addDeliveryfee(deliveryFee);
+    console.log(currentOrder);
+    $("#totalcost").text(currentOrder.totalcost);
     $("#saladoptions").hide();
     $("#pricescreen").fadeIn();
   });

@@ -30,10 +30,10 @@
       <div class="row">
         <div class="col-md-6">
           <select class="form-control" id="pizzasize">
-            <option> (choose size) </option>
-            <option value="20" id="">Large 18"</option>
-            <option value="15" id="">Medium 14"</option>
-            <option value="10" id="">Small 10"</option>
+            <option value="0"> (choose size) </option>
+            <option value="20" id="">Large -  18 inch ($20)</option>
+            <option value="15" id="">Medium - 14 inch ($15)</option>
+            <option value="10" id="">Small - 10 inch ($10)</option>
           </select>
           <div class="radio">
             <p>Delivery or pickup?</p>
@@ -83,6 +83,7 @@
     </div>
       <button type="submit" id="detailbtn">See Price</button>
   </form>
+  <p id="please">Please choose a size</p>
   <a href="index.html">Start over</a>
   </div>
 
@@ -149,7 +150,7 @@
 
   <div id="pricescreen" class="box">
     <p>Your total cost is: </p>
-    <p id="totalcost"></p>
+    <p id="totalcost">$</p>
     <button type="button" id="buybtn">Place my order!</button><br>
     <a href="index.html">Start over</a>
   </div>

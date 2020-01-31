@@ -9,7 +9,7 @@ body {
   font-family: courier;
 }
 
-#pricescreen, #pizzaoptions, #saladoptions {
+#pricescreen, #pizzaoptions, #saladoptions, #please {
   display: none;
 }
 
