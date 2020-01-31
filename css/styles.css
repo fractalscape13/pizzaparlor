@@ -11,6 +11,7 @@ body {
 
 h1 {
   color: goldenrod;
+  margin-top: 30px;
 }
 
 .box {
@@ -19,4 +20,10 @@ h1 {
   margin-left: 150px;
   margin-right: 150px;
   padding: 20px;
+}
+
+button {
+  border: 3px solid black;
+  border-radius: 10%;
+  background-image: radial-gradient(silver, red);
 }
