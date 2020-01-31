@@ -65,4 +65,9 @@ $(document).ready(function() {
     $("#saladdetailscreen").hide();
     $("#pricescreen").fadeIn();
   });
+
+  //click function for price screen
+  $("#pricescreen").on("click", "#buybtn", function() {
+    alert("you have made a purchase, yay!")
+  });
 });
