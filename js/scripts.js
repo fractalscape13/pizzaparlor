@@ -12,7 +12,6 @@ Pizza.prototype.addToppings = function(input) {
   for (var i=0; i < input.length; i++){
     updateCost += parseInt(input[i]);
   }
-  console.log(updateCost);
   this.toppings += updateCost;
 }
 
@@ -37,7 +36,11 @@ function Salad() {
 }
 
 Salad.prototype.addAdditions = function(input) {
-  this.additions += input;
+  var updateCost = 0;
+  for (var i=0; i < input.length; i++){
+    updateCost += parseInt(input[i]);
+  }
+  this.additions += updateCost;
 }
 
 Salad.prototype.addSize = function(input) {
@@ -103,6 +106,11 @@ $(document).ready(function() {
     currentSize = parseInt($("#saladsize").val());
     currentOrder.addSize(currentSize);
     if (currentOrder.size > 9) {
+      $.each($("input[name='topping']:checked"), function(){
+        totalAddons.push($(this).val());
+      });
+      currentOrder.addAdditions(totalAddons);
+      console.log(totalAddons);
       deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
