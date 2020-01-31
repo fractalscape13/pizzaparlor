@@ -110,8 +110,8 @@ $(document).ready(function() {
         totalAddons.push($(this).val());
       });
       currentOrder.addAdditions(totalAddons);
-      console.log(totalAddons);
-      deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
+      deliveryFee = parseInt($("input:radio[name=deliverytype2]:checked").val());
+      console.log(deliveryFee);
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
       $("#totalcost").append(currentOrder.totalcost);
