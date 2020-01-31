@@ -74,7 +74,7 @@ $(document).ready(function() {
     currentOrder.addSize(currentSize);
     // totalAddons =  parseInt($().val());
     // currentOrder.addToppings(totalAddons);
-    deliveryFee = parseInt($("#deliveryfee").val()); //not working as expected
+    deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
     currentOrder.addDeliveryfee(deliveryFee);
     currentOrder.totalCost();
     console.log(currentOrder);
