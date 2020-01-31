@@ -4,6 +4,7 @@ function Pizza() {
   this.toppings = 0;
   this.deliveryfee = 0;
   this.totalcost = 0;
+  this.type = "Pizza";
 }
 
 Pizza.prototype.addToppings = function(input) {
@@ -27,6 +28,7 @@ function Salad() {
   this.additions = 0;
   this.deliveryfee = 0;
   this.totalcost = 0;
+  this.type = "Salad";
 }
 
 Salad.prototype.addAdditions = function(input) {
@@ -80,10 +82,11 @@ $(document).ready(function() {
     console.log(currentOrder);
     if (currentOrder.size > 9) {
       $("#totalcost").append(currentOrder.totalcost);
+      $("#totalorder").append(currentOrder.type)
       $("#pizzaoptions").hide();
       $("#pricescreen").fadeIn();
       } else {
-        $("#please").fadeIn();
+        $(".please").fadeIn();
       }
   });
 
@@ -92,14 +95,23 @@ $(document).ready(function() {
   $("#saladform").submit(function() {
     event.preventDefault();
     currentOrder = new Salad();
-
+    currentSize = parseInt($("#saladsize").val());
+    currentOrder.addSize(currentSize);
     deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
     currentOrder.addDeliveryfee(deliveryFee);
+    currentOrder.totalCost();
     console.log(currentOrder);
-    $("#totalcost").text(currentOrder.totalcost);
-    $("#saladoptions").hide();
-    $("#pricescreen").fadeIn();
+    if (currentOrder.size > 9) {
+      $("#totalcost").append(currentOrder.totalcost);
+      $("#totalorder").append(currentOrder.type)
+      $("#saladoptions").hide();
+      $("#pricescreen").fadeIn();
+      } else {
+        $(".please").fadeIn();
+      }
   });
+
+
 
   //click function for price screen
   $("#pricescreen").on("click", "#buybtn", function() {

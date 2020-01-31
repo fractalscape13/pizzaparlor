@@ -44,8 +44,8 @@
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="deliverytype" value="0">
-              In-store pickup
+              <input type="radio" name="deliverytype" value="0" checked>
+              In-store pickup (free)
             </label>
           </div>
         </div>
@@ -83,7 +83,7 @@
     </div>
       <button type="submit" id="detailbtn">See Price</button>
   </form>
-  <p id="please">Please choose a size</p>
+  <p class="please">Please choose a size</p>
   <a href="index.html">Start over</a>
   </div>
 
@@ -92,22 +92,22 @@
     <form id="saladform">
       <div class="row">
         <div class="col-md-6">
-          <select class="form-control">
+          <select class="form-control" id="saladsize">
             <option> (choose size) </option>
-            <option value="large" id="">Dinner Salad (large)</option>
-            <option value="small" id="">Side Salad (small)</option>
+            <option value="15" id="">Dinner Salad (large) ($15)</option>
+            <option value="10" id="">Side Salad (small) ($10)</option>
           </select>
           <div class="radio">
             <p>Delivery or pickup?</p>
             <label>
               <input type="radio" name="deliverytype" value="5">
-              Delivery
+              Delivery (+$5)
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="deliverytype" value="0">
-              In-store pickup
+              <input type="radio" name="deliverytype" value="0" checked>
+              In-store pickup (free)
             </label>
           </div>
         </div>
@@ -145,11 +145,14 @@
     </div>
       <button type="submit" id="saladdetailbtn">See Price</button>
   </form>
+  <p class="please">Please choose a size</p>
   <a href="index.html">Start over</a>
   </div>
 
   <div id="pricescreen" class="box">
-    <p>Your total cost is: </p>
+    <p><strong>You ordered:</strong></p>
+    <p id="totalorder"></p>
+    <p><strong>Your total cost is:</strong></p>
     <p id="totalcost">$</p>
     <button type="button" id="buybtn">Place my order!</button><br>
     <a href="index.html">Start over</a>
