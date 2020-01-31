@@ -34,12 +34,12 @@ $(document).ready(function() {
   $("#pizzaorder").on("click", "button", function() {
     $("#pizzaorder").hide();
     $("#saladorder").hide();
-    $("#detailscreen").fadeIn();
+    $("#pizzaoptions").fadeIn();
   });
   $("#saladorder").on("click", "button", function() {
     $("#pizzaorder").hide();
     $("#saladorder").hide();
-    $("#saladdetailscreen").fadeIn();
+    $("#saladoptions").fadeIn();
   });
   
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
     currentSize = parseInt($("#pizzasize").val());
     currentOrder.addSize(currentSize);
     // currentOrder.addTopping();
-    $("#detailscreen").hide();
+    $("#pizzaoptions").hide();
     $("#pricescreen").fadeIn();
 
   });
@@ -62,7 +62,7 @@ $(document).ready(function() {
     event.preventDefault();
     currentOrder = new Salad();
 
-    $("#saladdetailscreen").hide();
+    $("#saladoptions").hide();
     $("#pricescreen").fadeIn();
   });
 

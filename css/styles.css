@@ -9,13 +9,17 @@ body {
   font-family: courier;
 }
 
-#pricescreen, #detailscreen, #saladdetailscreen {
+#pricescreen, #pizzaoptions, #saladoptions {
   display: none;
 }
 
 h1 {
   color: goldenrod;
   margin-top: 30px;
+}
+
+h4 {
+  color: rgb(194, 185, 163);
 }
 
 .box {
