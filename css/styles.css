@@ -6,7 +6,7 @@ body {
   background-color: darkred;
   background-image: linear-gradient(black, indigo, cyan, goldenrod, darkred);
   text-align: center;
-  font-family: monospace;
+  font-family: courier;
 }
 
 #pricescreen, #detailscreen, #saladdetailscreen {
@@ -28,11 +28,12 @@ h1 {
 
 button {
   border: 3px solid black;
-  border-radius: 10%;
+  border-radius: 15px;
   background-image: radial-gradient(silver, red);
   margin: 25px;
 }
 
 button:hover {
   cursor: pointer;
+  opacity: .6;
 }
