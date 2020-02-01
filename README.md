@@ -22,10 +22,9 @@ _Simple, doesn't require anything additional_
 
 
 * _Let user click to start order and choose which item_
-* _Let user choose options and toppings_
-* _Let user change choices before placing order_
-* _Let user submit order and see final cost_
-* _Let user add item to cart for purchase_
+* _Let user choose options and toppings from forms_
+* _Let user submit order with click and see final cost_
+* _Give input form for address if delivery is selected_
 
 ## Known Bugs
 
