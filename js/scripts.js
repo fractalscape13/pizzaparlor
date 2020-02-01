@@ -58,7 +58,11 @@ Salad.prototype.addDeliveryfee = function(input) {
 }
 
 Salad.prototype.totalCost = function() {
-  this.totalcost += this.size + this.additions + this.deliveryfee;
+  if (this.size == 20) {
+    this.totalcost += this.size + this.additions + this.deliveryfee - 5;
+  } else {
+    this.totalcost += this.size + this.additions + this.deliveryfee;
+  }
 }
 
 function getSize(object) {
