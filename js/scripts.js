@@ -44,7 +44,11 @@ Salad.prototype.addAdditions = function(input) {
 }
 
 Salad.prototype.addSize = function(input) {
-  this.size += input;
+  if (input == 15) {
+    this.size += (input + 5);
+  } else {
+    this.size += input;
+  }
 }
 
 Salad.prototype.addDeliveryfee = function(input) {
@@ -119,16 +123,17 @@ $(document).ready(function() {
     currentOrder = new Salad();
     currentSize = parseInt($("#saladsize").val());
     currentOrder.addSize(currentSize);
-    if (currentOrder.size > 9) {
+    if (currentOrder.size > 8) {
       $.each($("input[name='topping']:checked"), function(){
         totalAddons.push($(this).val());
       });
       currentOrder.addAdditions(totalAddons);
       deliveryFee = parseInt($("input:radio[name=deliverytype2]:checked").val());
-      console.log(deliveryFee);
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
+      size = getSize(currentOrder);
       $("#totalcost").append(currentOrder.totalcost);
+      $("#totalorder").append(size)
       $("#totalorder").append(currentOrder.type)
       $("#saladoptions").hide();
       $("#pricescreen").fadeIn();
