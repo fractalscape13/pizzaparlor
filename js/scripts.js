@@ -1,4 +1,5 @@
-// //business logic
+// // // business logic // // //
+//pizza constructor and prototypes
 function Pizza() {
   this.size = 0;
   this.toppings = 0;
@@ -27,6 +28,7 @@ Pizza.prototype.totalCost = function() {
   this.totalcost += this.size + this.toppings + this.deliveryfee;
 }
 
+//salad constructor and prototypes
 function Salad() {
   this.size = 0;
   this.additions = 0;
@@ -69,16 +71,14 @@ function getSize(object) {
   }
 };
 
-
-
-//user interface
+// // // user interface // // //
 var currentOrder = "";
 var currentSize = 0;
 var totalAddons = [];
 var deliveryFee = 0;
-var size = "";
+var sizeStr = "";
 $(document).ready(function() {
-  //click function for start screen (salad or pizza)
+  //click function for start screen
   $("#pizzaorder").on("click", "button", function() {
     $("#pizzaorder").hide();
     $("#saladorder").hide();
@@ -90,7 +90,6 @@ $(document).ready(function() {
     $("#saladoptions").fadeIn();
   });
   
-
   //click function for pizza detail screen
   $("#pizzaform").submit(function() {
     event.preventDefault();
@@ -105,9 +104,9 @@ $(document).ready(function() {
       deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
-      size = getSize(currentOrder);
+      sizeStr = getSize(currentOrder);
       $("#totalcost").append(currentOrder.totalcost);
-      $("#totalorder").append(size)
+      $("#totalorder").append(sizeStr)
       $("#totalorder").append(currentOrder.type)
       $("#pizzaoptions").hide();
       $("#pricescreen").fadeIn();
@@ -115,7 +114,6 @@ $(document).ready(function() {
         $(".please").fadeIn();
     }
   });
-
 
   //click function for salad detail screen
   $("#saladform").submit(function() {
@@ -131,9 +129,9 @@ $(document).ready(function() {
       deliveryFee = parseInt($("input:radio[name=deliverytype2]:checked").val());
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
-      size = getSize(currentOrder);
+      sizeStr = getSize(currentOrder);
       $("#totalcost").append(currentOrder.totalcost);
-      $("#totalorder").append(size)
+      $("#totalorder").append(sizeStr)
       $("#totalorder").append(currentOrder.type)
       $("#saladoptions").hide();
       $("#pricescreen").fadeIn();
@@ -141,8 +139,6 @@ $(document).ready(function() {
         $(".please").fadeIn();
       }   
   });
-
-
 
   //click function for price screen
   $("#pricescreen").on("click", "#buybtn", function() {
