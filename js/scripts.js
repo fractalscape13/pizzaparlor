@@ -55,12 +55,24 @@ Salad.prototype.totalCost = function() {
   this.totalcost += this.size + this.additions + this.deliveryfee;
 }
 
+function getSize(object) {
+  if (object.size == 20) {
+    return "Large ";
+  } else if (object.size == 15) {
+    return "Medium ";
+  } else {
+    return "Small ";
+  }
+};
+
+
 
 //user interface
 var currentOrder = "";
 var currentSize = 0;
 var totalAddons = [];
 var deliveryFee = 0;
+var size = "";
 $(document).ready(function() {
   //click function for start screen (salad or pizza)
   $("#pizzaorder").on("click", "button", function() {
@@ -89,7 +101,9 @@ $(document).ready(function() {
       deliveryFee = parseInt($("input:radio[name=deliverytype]:checked").val());
       currentOrder.addDeliveryfee(deliveryFee);
       currentOrder.totalCost();
+      size = getSize(currentOrder);
       $("#totalcost").append(currentOrder.totalcost);
+      $("#totalorder").append(size)
       $("#totalorder").append(currentOrder.type)
       $("#pizzaoptions").hide();
       $("#pricescreen").fadeIn();
@@ -132,6 +146,7 @@ $(document).ready(function() {
       currentOrder.deliveryfee = 0;
     } else {
       $("#ontheway").fadeIn();
+      $("#buybtn").hide();
     }
   });
 });
