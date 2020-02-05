@@ -22,9 +22,17 @@ _Simple, doesn't require anything additional_
 
 
 * _Let user click to start order and choose which item_
+    * _Example: Input: Click pizza button
+    * _Output: Pizza detail screen shows
 * _Let user choose options and toppings from forms_
+    * _Example: Input: Click artichokes
+    * _Output: Price increases by $1
 * _Let user submit order with click and see final cost_
+    * _Example: Input: Click place order button
+    * _Output: Total cost screen is shown
 * _Give input form for address if delivery is selected_
+    * _Example: Input: Click delivery option
+    * _Output: Delivery address input box shows
 
 ## Known Bugs
 
